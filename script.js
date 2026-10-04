@@ -1,8 +1,8 @@
 const surprisePics = [
-  "photos/photo_01.jpg",
-  "photos/photo_02.jpg",
-  "photos/photo_03.jpg",
-  "photos/photo_04.jpg"
+  "photo_01.jpg",
+  "photo_02.jpg",
+  "photo_03.jpg",
+  "photo_04.jpg"
 ];
 
 const surpriseLines = [
@@ -77,13 +77,13 @@ const captions = [
 ];
 
 const musicByStage = {};
-for(let i=0;i<=10;i++) musicByStage[i]="music/video_song.mp3";
+for(let i=0;i<=10;i++) musicByStage[i]="video_song.mp3";
 
 let stage=0, photoIndex=0, noCount=0;
 let photoTimer=null;
 const screens=[...document.querySelectorAll(".screen")];
 const audio=document.getElementById("music");
-const noSound = new Audio("music/funny_no.wav");
+const noSound = new Audio("funny_no.wav");
 noSound.volume=.55;
 
 function go(n){
@@ -134,7 +134,7 @@ function startPhotoTimer(){
 function renderPhoto(){
   const img=document.getElementById("memoryImg");
   img.classList.remove("photo-swap"); void img.offsetWidth; img.classList.add("photo-swap");
-  img.src="photos/"+encodeURIComponent(photos[photoIndex]);
+  img.src=""+encodeURIComponent(photos[photoIndex]);
   document.getElementById("memoryCount").textContent=`Memory ${String(photoIndex+1).padStart(2,"0")} / ${photos.length}`;
   document.getElementById("memoryText").textContent=captions[photoIndex % captions.length];
 }
