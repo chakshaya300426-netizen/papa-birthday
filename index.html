@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🎀 Kutty Papa's Birthday Surprise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="surpriseBuddy" class="surprise-buddy" aria-hidden="true">
+  <div id="surpriseBuddyText" class="surprise-bubble">Hiiii Kutty Papa! 👀💕</div>
+  <img id="surpriseBuddyImg" src="photos/photo_01.jpg" alt="">
+</div>
+<div id="confetti"></div>
+<main class="app">
+<div class="progress"><span id="progressBar"></span></div>
+
+<section class="screen active" data-stage="0">
+  <div class="sticker">🎀</div><p class="eyebrow">A tiny surprise made just for you</p>
+  <h1>Hello, <span>Kutty Papa!</span> 💕</h1>
+  <p class="sub">Wait... 👀<br>Someone has been secretly planning something for you.</p>
+  <div class="stage-pic cute-pic"><img src="photos/photo_34.jpg" alt="Cute surprise"><span>🥹💕 Look at this cute face!</span></div>
+  <button class="primary" onclick="go(1)">✨ START SURPRISE ✨</button>
+</section>
+
+<section class="screen" data-stage="1">
+  <div class="sticker">😏</div><p class="eyebrow">Important question...</p><h2>Heeyyy Kutty Papa!</h2>
+  <p class="sub">Are you excited for your surprise?</p>
+  <div class="stage-pic cartoon-pic"><img src="photos/photo_02.jpg" alt="Cute picture"><span>👀 You know you want to say YES...</span></div>
+  <div class="choice-wrap"><button class="yes primary" onclick="go(3)">YESSS 💕</button><button id="noBtn" class="no" onclick="nope()">NO 😒</button></div>
+  <p id="noText" class="tiny">Choose carefully... 😌</p>
+</section>
+
+<section class="screen" data-stage="2">
+  <div class="sticker">😂</div><h2>Okayyyy... you pressed NO.</h2>
+  <p class="sub">The button has officially decided that this is unacceptable. 😭</p>
+  <div class="stage-pic funny-pic"><img src="photos/photo_22.jpg" alt="Funny memory"><span>⌛ I told you 5 minutes ago... 😂</span></div>
+  <p class="quote">“You cannot escape your birthday surprise!”</p><button class="primary" onclick="go(3)">Fineee, continue 😂</button>
+</section>
+
+<section class="screen" data-stage="3">
+  <div class="balloons">🎈 🎈 🎈</div><div class="sticker">✨</div><h2>OKAYYYY! 🎉</h2>
+  <p class="sub">The birthday mission has officially started.</p><div class="character big">🐻🎁</div>
+  <p class="quote">Prepare yourself, Kutty Papa... something cute is coming. 💕</p><button class="primary" onclick="go(4)">Let's gooo! 🎈</button>
+</section>
+
+<section class="screen" data-stage="4">
+  <div class="sticker">📸</div><p class="eyebrow">Memory lane</p><h2>Our little memories 💕</h2>
+  <p class="sub">Every photo changes automatically — one cute memory every second. 🥹</p>
+  <div class="photo-stage">
+    <div class="photo-sparkles">✨ 📸 ✨</div>
+    <div class="memory-card"><img id="memoryImg" alt="Birthday memory"><div class="memory-caption"><span id="memoryCount">Memory 01</span><p id="memoryText">Proof that you have survived another year with me. 😭😂</p></div></div>
+    <div class="photo-sparkles bottom">✨ 🎀 ✨</div>
+  </div>
+  <p class="tiny">No buttons needed — just watch. Each photo stays for exactly 1 second. 💗</p>
+</section>
+
+<section class="screen" data-stage="5">
+  <div class="sticker">❤️</div><p class="eyebrow">All your memories, together</p><h2>One Big Heart 💗</h2>
+  <p class="sub">All 34 memories from <b>kutty(1).zip</b>, arranged together as one big photo heart — just like the reference. ❤️</p>
+  <div class="heart-collage-wrap"><img class="heart-collage" src="photos/all_memories_big_heart.jpg" alt="All 35 memories arranged as one big photo heart"></div>
+  <p class="tiny">34 photos • one big heart • no small hearts inside. ❤️</p>
+  <button class="primary" onclick="go(6)">And now... something funny 😂</button>
+</section>
+
+<section class="screen" data-stage="6">
+  <div class="sticker">😂</div><div class="stage-photo joke-stage-pic"><img src="photos/photo_22.jpg" alt="Funny birthday memory"><span>“I told you 5 minutes ago...” 😂</span></div>
+  <h2>Official Birthday Evidence</h2><p class="sub">Scientific proof that you are still cute, still crazy, and somehow getting older. 😭</p>
+  <div class="evidence"><div>🧪 <b>Age increased:</b> YES</div><div>😂 <b>Drama level:</b> Still loading...</div><div>💗 <b>Cuteness:</b> Permanently enabled</div><div>🏆 <b>Survival achievement:</b> UNLOCKED</div></div>
+  <button class="primary" onclick="go(7)">One last thing... 🎁</button>
+</section>
+
+<section class="screen" data-stage="7"><div class="sticker">🎁</div><p class="eyebrow">For you...</p><h2>ONE LAST THING</h2><p class="sub">I have something special hidden inside this little box.</p><div class="gift-sidekick">🎀💕</div><button id="gift" class="gift" onclick="openGift()">🎁</button><p id="giftHint" class="tiny">Tap the gift 🎁</p></section>
+<section class="screen" data-stage="8"><div id="celebrate" class="celebrate">🎉🎊🎈</div><div class="cake">🎂</div><h1>HAPPY BIRTHDAY</h1><h2 class="pink">KUTTY PAPA ❤️</h2><p class="sub">May your day be ridiculously happy, wonderfully chaotic, and full of cake. 🎀</p><button class="primary" onclick="go(9)">Open your message 💌</button></section>
+<section class="screen" data-stage="9"><div class="sticker">💌</div><p class="eyebrow">A message from me to you</p><h2>Dear Kutty Papa...</h2><div class="letter"><p class="my-message">Oye nesthama....!😊<br>
+Hello mental fellow happy birthdayyy ney<br>
+Inka em name tho pilavalo kuda ardham kaavatledu ninnu😅… kani ee name tho start cheddam le😁<br>
+Nenu enduku idi rastunnano naake telidhu honestly🥱 . But first time nee kosam ila konchem matter rastunna👉👈… so adjust avvu koncham😚.<br>
+Mana madhya jarigina moments gurinchi think chesthe, konni navvu teppisthayi  konni moments matram “enti ra mana bonding ila perigipoyindi?” anipisthayi🥹<br>
+First lo just normal ga unna manam, mellaga ila close aipotham ani assalu expect cheyyaledu🫠. Random talks, stupid jokes, unnecessary arguments, okariki okaru teasing cheyyadam, sudden ga serious conversations… anni kalipi mana bonding ki oka separate story aipoyindi🤭.<br>
+Mana bond epatiki ilane untadhi ankuntuuu.....<br><br>
+Happy birthday our little cute mental fellow.....<br><br>
+ni priyamaina snehithuralu😊😜.</p></div><button class="primary" onclick="go(10)">One more thing... 💖</button></section>
+<section class="screen" data-stage="10"><div class="final-hearts">💗 💕 💗</div><h1>Once again...</h1><h2 class="pink">HAPPY BIRTHDAY<br>KUTTY PAPA! 🎂💗</h2><p class="sub">Stay cute.<br>Stay crazy.<br>Stay YOU. 😌❤️</p><div class="character big">🐰💐🐻</div><p class="tiny">Made with a ridiculous amount of love. 🎀</p></section>
+</main>
+<audio id="music" loop preload="auto"></audio><div id="birthday-note" class="birthday-note">🎂 Happy Birthday, Kutty Papa! 🎀</div><script src="script.js"></script>
+</body></html>

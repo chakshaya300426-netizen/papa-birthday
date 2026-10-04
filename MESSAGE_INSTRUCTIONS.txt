@@ -1,0 +1,9 @@
+FINAL MESSAGE
+
+The personal birthday message supplied by the user is already inserted in index.html.
+
+Photos
+- 34 photos from kutty(1).zip are used.
+- The 4 supplied cat/cartoon photos were removed from the website.
+- The memory slideshow changes every 1 second.
+- The big heart uses all 34 memory photos in a wall-photo style heart arrangement, with no small hearts inside.
